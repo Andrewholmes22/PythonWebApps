@@ -1,3 +1,5 @@
+from pathlib import Path
+from .views import photo_list
 from django.views.generic import TemplateView
 
 # Create your views here.
