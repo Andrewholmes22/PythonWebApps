@@ -1,14 +1,13 @@
-{% extends 'theme.html' %}
-
-
-
 {% block content %}
 
 {% for photo in photos %}
-{{photo}}
-<!--<a href="{{ photo }}">
+<a href="{{ photo }}">
+<img src="{{ photo }}" alt="{{ photo }}" width="200">
+</a>
+
+<!-- <a href="/photo/{{ photo }}">
     <img class="photo" src="/{{ photo }}" alt="Chapter {{ photo }}" width="200">
-</a>-->
+</a> -->
 
 {% endfor %}
 

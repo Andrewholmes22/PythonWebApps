@@ -1,5 +1,6 @@
 from pathlib import Path
-from .views import photo_list
+from typing import Any
+from django import http
 from django.views.generic import TemplateView
 
 # Create your views here.
@@ -11,12 +12,10 @@ class PhotoView(TemplateView):
         image= f'static/images/{name}'
         return {'photo':image}
 
-    def photo_list():
-        photos = Path('static/images').iterdir()
-        photos = [ f for i, f in photos]
-        return photos
 class PhotoListView(TemplateView):
     template_name = 'photos.html'
 
     def get_context_data(self, **kwargs):
-        return dict(photos=photo_list())
+        photos = Path('static/images').iterdir()
+        photos = [f for f in photos]
+        return dict(photos=photos)

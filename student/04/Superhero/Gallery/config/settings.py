@@ -20,16 +20,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#(znypiks^2to89pmh$9=q%i(n8j*#7n4a^3=3-p2de(==br9@'
+SECRET_KEY = 'django-insecure-gm29cjn@s&oo_iu=!9(_pns69x5rk37$!$l0&k+xa%4s6#ce69'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Handle all URL requests made to web server
 ALLOWED_HOSTS = ['*']
 
-
-# Application definition
-
+# Enable data the Profile app
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photos',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,6 +116,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# On Digital Ocean it will use the Static Server
+# Locally you need to enable the static media server (Images, CSS, Javascript)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
