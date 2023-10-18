@@ -1,0 +1,14 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+    {% for note in object_list %}
+
+        <p> <a href="{{ note.pk }}"> {{ note.title }} </a> </p>
+        <p> {{ note.body }} </p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
