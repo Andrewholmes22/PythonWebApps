@@ -6,7 +6,7 @@
             "type": "python",
             "request": "launch",
             "program": "manage.py",
-            "cwd": "${workspaceFolder}/student/05/notepad",
+            "cwd": "${workspaceFolder}/student/05/Superhero",
             "args": [
                 "runserver"
             ],
