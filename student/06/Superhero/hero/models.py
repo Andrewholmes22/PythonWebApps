@@ -2,6 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Superhero(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=100)
+    identity = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.CharField(max_length=200)
+    strength = models.CharField(max_length=100)
+    weakness = models.CharField(max_length=100)
+    image = models.CharField(max_length=100)
