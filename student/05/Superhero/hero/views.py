@@ -1,38 +1,28 @@
 from django.views.generic import TemplateView
+from pathlib import Path
+from typing import Any
+from django import http
+from .models import Superhero
+
+
 
 
 class IndexView(TemplateView):
     template_name = 'heroes.html'
 
-
-class HulkView(TemplateView):
-    template_name = 'hero.html'
-
-    def get_context_data(self, **kwargs):
-        return {
-            'title': 'Hulk',
-            'body': 'My name is Bruce Banner',
-            'image': '/static/images/hulk.jpg'
-        }
-
-
-class IronManView(TemplateView):
-    template_name = "hero.html"
+class HeroView(TemplateView):
+    template_name='hero.html'
 
     def get_context_data(self, **kwargs):
-        return {
-            'title': 'Iron Man',
-            'body': 'My name is Tony Stark, but I am Iron Man',
-            'image': '/static/images/iron_man.jpg'
-        }
+        id=kwargs['pk']
+        hero= Superhero.objects.get(pk=id)
+        image= f'static/images/{hero.image}'
+        return {'hero':hero,'image':image}
 
-
-class BlackWidow(TemplateView):
-    template_name = 'hero.html'
+class HeroListView(TemplateView):
+    template_name = 'heroes.html'
 
     def get_context_data(self, **kwargs):
-        return {
-            'title': 'Black Widow',
-            'body': 'My name is Natasha Romanova',
-            'image': '/static/images/black_widow.jpg'
-        }
+        heroes=Superhero.objects.all()
+        heroes=[f for f in heroes]
+        return dict(heroes=heroes)

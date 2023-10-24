@@ -1,6 +1,25 @@
-<h1>My Superhero Page</h1>
+{% extends 'theme.html' %}
+
+
+
+{% block content %}
+
 <ul>
-    <li><a href="hulk">Hulk</a></li>
-    <li><a href="blackwidow">Black Widow</a></li>
-    <li><a href="ironman">Iron Man</a></li>
+
+
+{% for h in heroes %}
+<li>
+<a href="{{ h.pk }}">
+{{ h.name }}
+</a>
+</li>
+{% endfor %}
 </ul>
+
+<!-- <a href="/photo/{{ photo }}">
+    <img class="photo" src="/{{ photo }}" alt="Chapter {{ photo }}" width="200">
+</a> -->
+
+
+
+{% endblock content %}
