@@ -16,7 +16,7 @@ class HeroView(TemplateView):
     def get_context_data(self, **kwargs):
         id=kwargs['pk']
         hero= Superhero.objects.get(pk=id)
-        image= f'static/images/{hero.image}'
+        image= f'/static/images/{hero.image}'
         return {'hero':hero,'image':image}
 
 class HeroListView(TemplateView):
