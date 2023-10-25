@@ -1,11 +1,9 @@
-{% extends 'theme.html' %}
+{% extends "superhero_theme.html" %}
 
-
-
+{% block title %}SuperHeroes{% endblock %}
 {% block content %}
-
+<h1>Heroes</h1>
 <ul>
-
 
 {% for h in heroes %}
 <li>
