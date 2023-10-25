@@ -6,5 +6,5 @@ from django.contrib.admin import site
 urlpatterns = [
     path(r'admin/',site.urls),
     path('', HeroListView.as_view()),
-    path('<int:pk>', HeroView.as_view()),
+    path('hero/<int:pk>', HeroView.as_view()),
 ]
