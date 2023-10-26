@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hero',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,4 @@ STATIC_ROOT= 'static_assets/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK='uni_form'
